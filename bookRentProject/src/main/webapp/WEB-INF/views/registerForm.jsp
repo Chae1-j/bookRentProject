@@ -52,15 +52,16 @@
 	<nav align="center">
 		<ul>
 			<li><a href="register">고객등록</a></li>
-			<li><a href="">고객목록조회/수정</a></li>
-			<li><a href="">고객대여리스트</a></li>
-			<li><a href="">고객대여금액조회</a></li>
-			<li><a href="">홈으로</a></li>
+			<li><a href="custList">고객목록조회/수정</a></li>
+			<li><a href="rentList">고객대여리스트</a></li>
+			<li><a href="rentAmount">고객대여금액조회</a></li>
+			<li><a href="/bookRentProject">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>
 	<form action="" method="post" enctype="multipart/form-data">
 		<section align= "center">
+			<h3>고객등록</h3>
 			<div>
 				<label>고객번호</label>
 				<label>${cust_no }</label>

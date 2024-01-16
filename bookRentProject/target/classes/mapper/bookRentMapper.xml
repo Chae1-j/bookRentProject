@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fastCampus.bookRentProject.mapper.bookRentMapper">
+	<!-- 고객 등록 -->
+	<insert id="">
+		INSERT INTO cust_tbl
+			VALUES (
+				?<!-- AI 사용한 값 넣는 방법 알아보기 -->
+				,CUST_NAME
+				,PHONE
+				,NOW()
+				,CUST_EMAIL
+				,GRADE
+			)
+	</insert>
+	
+	<!-- 고객 목록 -->
+	<select id="">
+		SELECT *
+			FROM cust_tbl
+	</select>
+	
+	<!-- 고객정보 수정-->
+	<update id="">
+		UPDATE cust_tbl
+			SET CUST_NAME = #{CUST_NAME}
+				,PHONE = #{PHONE}
+				,CUST_EMAIL = #{CUST_EMAIL}
+				,GRADE = #{GRADE}
+			WHERE
+				CUST_NO = #{CUST_NO}
+	</update>
+	
+	<!-- 고객대여리스트 -->
+	<select id="">
+		SELECT *
+			FROM rent_tbl
+	</select>
+	
+	<!-- 고객대여금액조회 -->
+	<select id="">
+		
+	</select>
+
+</mapper>

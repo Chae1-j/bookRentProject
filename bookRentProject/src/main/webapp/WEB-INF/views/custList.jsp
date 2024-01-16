@@ -29,21 +29,28 @@
 	<hr>
 	<form action="" method="post" enctype="multipart/form-data">
 		<section align= "center">
-		<h3>고객목록 조회/수정</h3>
+		<h3>고객목록 조회/수</h3>
 			<table class="custList" border=1 align="center">
 				<tr>
 					<th>고객번호</th>
 					<th>고객이름</th>
+					<th>전화번호</th>
+					<th>가입일자</th>
+					<th>이메일</th>
 					<th>고객등급</th>
-					<th>총대여금액</th>
 				</tr>
-				<c:forEach var="cust" items="${custList }" varStatus="status">
-				<!-- status 사용안할 수도 있음. mapper에서 테이블 조인함 -->
+				<c:forEach var="cust" items="${custList }" >
 s					<tr>
-						<td>${cust.cust_no }</td>
+						<td><a href="">${cust.cust_no }</a></td>
 						<td>${cust.cust_name }</td>
-						<td>${cust.grade }</td>
-						<td>${rent[status.index].rent_price }</td>
+						<td>${cust.phone }</td>
+						<td>${cust.phone }</td>
+						<td>${cust.cust_email }</td>
+						<td>
+							<c:if test="${cust.grade eq 'P' }">Platinum</c:if>
+							<c:if test="${cust.grade eq 'G' }">Gold</c:if>
+							<c:if test="${cust.grade eq 'S' }">Silver</c:if>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>

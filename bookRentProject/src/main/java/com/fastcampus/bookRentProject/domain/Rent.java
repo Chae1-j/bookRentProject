@@ -1,4 +1,4 @@
-package com.fastcampus.bookRentProject;
+package com.fastcampus.bookRentProject.domain;
 
 import java.util.Date;
 

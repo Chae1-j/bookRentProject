@@ -6,9 +6,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.fastcampus.bookRentProject.domain.Member;
+
 @Controller
-@RequestMapping("/register")
-public class RegisterController {
+public class CustomerController {
 //	@Autowired
 //	Member member;
 	
@@ -17,6 +18,15 @@ public class RegisterController {
 		return "registerForm";
 	}
 	
+	@GetMapping("custList")
+	public String list() {
+		return "custList";
+	}
+	
+	@GetMapping("custModify")
+	public String modify() {
+		return "custModify";
+	}
 //	@GetMapping(value = "BuyerList")
 //	public String BuyerList(@RequestParam(defaultValue = "") String keyword,HttpSession session, Model model) {
 //		
