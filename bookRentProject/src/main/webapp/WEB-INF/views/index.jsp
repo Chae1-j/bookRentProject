@@ -16,9 +16,9 @@
 <body>
 	<header ><h2 align="center">도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
 	<hr>
-	<nav align="center">
+	<nav>
 		<ul>
-			<li><a href="${path }/WEB-INF/views/registerForm.jsp">고객등록</a></li>
+			<li><a href="register">고객등록</a></li>
 			<li><a href="">고객목록조회/수정</a></li>
 			<li><a href="">고객대여리스트</a></li>
 			<li><a href="">고객대여금액조회</a></li>
