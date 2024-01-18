@@ -2,7 +2,7 @@ package com.fastcampus.bookRentProject.domain;
 
 import java.util.Date;
 
-public class Rent {
+public class RentDto {
 	private int cust_no;
 	private int rent_no;
 	private String book_code;

@@ -1,21 +1,30 @@
-package com.fastcampus.bookRentProject;
+package com.fastcampus.bookRentProject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.fastcampus.bookRentProject.domain.Member;
+import com.fastcampus.bookRentProject.dao.*;
+import com.fastcampus.bookRentProject.domain.*;
 
 @Controller
 public class CustomerController {
-//	@Autowired
-//	Member member;
+	@Autowired(required=false)
+	private CustomerDao cust;
 	
 	@GetMapping("register")
 	public String register() {
 		return "registerForm";
+	}
+	
+	@PostMapping("registerPro")
+	public String registerPro(@ModelAttribute Model m, CustomerDto dto) {
+		System.out.println(dto);
+		return "custList";
 	}
 	
 	@GetMapping("custList")

@@ -10,6 +10,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 <title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
 <link rel="stylesheet" href="${path}/resources/css/main.css" type="text/css">
 </head>
@@ -28,7 +30,7 @@
 	function onlynumber(str) {
 	    str = String(str);
 	    //alert("숫자만 입력가능합니다.")
-	    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1') + alert;
+	    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
 	}
 </script>
 
@@ -37,16 +39,18 @@
 	
 	//===========이메일 입력 시 영어, 숫자만 입력 가능===============
 	function onlyEngNum(str) {
-		var regType1 = /^[A-Za-z0-9+]*$/; // regex : 영어, 숫자만 입력
-		if (regType1.test(str.value)) { //영어, 숫자만 입력했을 때
+		//var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+		var regType1 = /^[A-Za-z0-9+.\@]*$/; // regex : 영어, 숫자만 입력
+		if (regExp.test(str.value)) { //영어, 숫자만 입력했을 때
 		}else{//영어, 숫자를 제외한 값 입력 시
 			str.value = ""; // ""으로 초기화
-			alert("영어와 숫자만 입력가능합니다.")
+			alert("이메일 형식에 맞게 입력해주세요")
 		}
 	}
 </script>
 
 <body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 	<header ><h2 align="center">도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
 		<hr>
 	<nav align="center">
@@ -59,7 +63,7 @@
 		</ul>
 	</nav>
 	<hr>
-	<form action="" method="post" enctype="multipart/form-data">
+	<form action="registerPro" method="post" enctype="multipart/form-data">
 		<section align= "center">
 			<h3>고객등록</h3>
 			<div>
