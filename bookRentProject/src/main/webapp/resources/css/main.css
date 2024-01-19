@@ -4,12 +4,14 @@
 	font-family : Helvetica;
 }
 
-ul {
+nav > ul {
 	list-style: none;
 	position: relative;
 }
 
 li {
+	list-style: none;
+	disply: inline-block;
 	float: left;
 	width: 20%;
 	height: 30px;	

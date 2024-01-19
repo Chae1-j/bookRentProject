@@ -48,27 +48,30 @@
 		}
 	}
 </script>
-
+<script>
+	var msg = document.getElementByName("cust_name");
+	function chk() {
+		alert(msg);
+	}
+</script>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	<header ><h2 align="center">도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
-		<hr>
-	<nav align="center">
-		<ul>
-			<li><a href="register">고객등록</a></li>
-			<li><a href="custList">고객목록조회/수정</a></li>
-			<li><a href="rentList">고객대여리스트</a></li>
-			<li><a href="rentAmount">고객대여금액조회</a></li>
-			<li><a href="/bookRentProject">홈으로</a></li>
-		</ul>
-	</nav>
+	<header><h2>도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
 	<hr>
-	<form action="registerPro" method="post" enctype="multipart/form-data">
+	<ul>
+		<li><a href="register">고객등록</a></li>
+		<li><a href="custList">고객목록조회/수정</a></li>
+		<li><a href="rentList">고객대여리스트</a></li>
+		<li><a href="rentAmount">고객대여금액조회</a></li>
+		<li><a href="/bookRentProject">홈으로</a></li>
+	</ul>
+	<hr>
+	<form action="registerPro" method="post">
 		<section align= "center">
 			<h3>고객등록</h3>
 			<div>
 				<label>고객번호</label>
-				<label>${cust_no }</label>
+				<label>자동번호 부여됨</label>
 			</div>
 			<div>
 				<label>고객이름</label>
@@ -92,11 +95,12 @@
 				</select>
 			</div>
 			<div>
-				<button type="submit">등록</button>
+				<button type="submit" onclick="chk">등록</button>
 				<button type="reset">취소</button>
 			</div>
 		</section>
 	</form>
+	<br>
 	<footer>
 		<div><h5 align="center">나도 할 수 있는 Java & Spring 웹 개발 종합반(정채원)</h5></div>
 	</footer>

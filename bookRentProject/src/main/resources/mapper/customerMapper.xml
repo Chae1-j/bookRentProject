@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fastCampus.bookRentProject.dao.CustomerDaoImpl.">
+	<!-- 고객 등록 -->
+	<insert id="insert">
+		<selectKey keyProperty="cust_no" resultType="int" order="BEFORE"> <!-- 글번호 -->
+			SELECT IFNULL(MAX(cust_no),0)
+				FROM notice
+		</selectKey>
+		
+		INSERT INTO cust_tbl
+			VALUES (
+				#{cust_no}+1
+				,#{cust_name}
+				,#{phone}
+				,now()
+				,#{cust_email}
+				,#{grade}
+			)
+	</insert>
+ 	
+	<!-- 전체 고객 목록 -->
+	<!-- 개별 고객 -->
+	<!-- 고객정보 수정--><!--
+	<select id="selectAll" resultType="dto">
+		SELECT *
+			FROM cust_tbl
+	</select>
+	
+	<select id="select" resultType="dto">
+		SELECT *
+		FROM cust_tbl
+		WHERE CUST_NO=#{cust_no}
+			
+	</select>
+	
+	<update id="custUpdate">
+		UPDATE cust_tbl
+			SET CUST_NAME = #{cust_name}
+				,PHONE = #{phone}
+				,CUST_EMAIL = #{cust_email}
+				,GRADE = #{grade}
+			WHERE
+				CUST_NO = #{cust_no}
+	</update>
+	-->
+
+</mapper>
