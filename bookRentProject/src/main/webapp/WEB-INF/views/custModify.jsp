@@ -10,8 +10,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
-<link rel="stylesheet" href="${path}/resources/css/main.css" type="text/css">
+<link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <!-- 자바스크립트, jQuery, AJAX -->
 <!-- 연락처 숫자만 입력되는 유효성 검사 -->
@@ -45,17 +46,16 @@
 		}
 	}
 </script>
-
 <body>
-	<header ><h2 align="center">도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
-		<hr>
-	<nav align="center">
-		<ul>
-			<li><a href="register">고객등록</a></li>
-			<li><a href="custList">고객목록조회/수정</a></li>
-			<li><a href="rentList">고객대여리스트</a></li>
-			<li><a href="rentAmount">고객대여금액조회</a></li>
-			<li><a href="/bookRentProject">홈으로</a></li>
+	<header><h2>도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
+	<hr>
+	<nav class="menu">
+		<ul class="nav nav-pills nav-fill">
+			<li class="nav-item"><a href="register">고객등록</a></li>
+			<li class="nav-item"><a href="custList">고객목록조회/수정</a></li>
+			<li class="nav-item"><a href="rentList">고객대여리스트</a></li>
+			<li class="nav-item"><a href="rentAmount">고객대여금액조회</a></li>
+			<li class="nav-item"><a href="">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>
@@ -93,8 +93,10 @@
 			</div>
 		</section>
 	</form>
-	<footer>
-		<div><h5 align="center">나도 할 수 있는 Java & Spring 웹 개발 종합반(정채원)</h5></div>
-	</footer>
+	<div class="container">
+		<footer>
+			<p class="text-center text-body-secondary">나도 할 수 있는 Java & Spring 웹개발 종합반(정채원)</p>
+		</footer>
+	</div>
 </body>
 </html>

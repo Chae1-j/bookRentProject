@@ -1,22 +1,64 @@
 @charset "UTF-8";
+/* 공통 */
+	body{
+		min-height: 100vh;
+		position: relative;
+	}
+	
+	header {
+		text-align:center;
+		
+	}
+	/* nav 영역 */
+	a {
+		text-decoration: none;
+	}
+	
+	p {
+		align: center;
+	}
+	
+	/* footer영역 */
+	footer {
+		width: 100%;
+		text-align:center;
+		bottom: 0px;
+		position: fixed;
+	}
+	
+	table {
+		padding: 10%;
+	}
+	
+	th {
+		text-align: center;
+	}
 
-* {
-	font-family : Helvetica;
-}
 
-nav > ul {
-	list-style: none;
+
+/* reigsterForm */
+section {
 	position: relative;
 }
 
-li {
-	list-style: none;
-	disply: inline-block;
-	float: left;
-	width: 20%;
-	height: 30px;	
+section > h5 {
+	text-align: center;
 }
 
-table {
-	border-line: 1px;
+.mb-3 {
+	margin-left: 10%;
+	margin-right: 10%;
 }
+
+form {
+	width: 80%;
+}
+
+/* custList */
+
+/* custModify */
+
+/* rentList */
+
+/* rentAmount */
+

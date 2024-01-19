@@ -12,24 +12,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
-<link rel="stylesheet" href="${path}/resources/css/main.css" type="text/css">
+<link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	<header ><h2 align="center">도서 고객 및 대여관리 프로그램 ver 1.0 </h2></header>
+	<header><h2>도서 고객 및 대여관리 프로그램 ver 1.0 </h2></header>
 	<hr>
-	<nav>
-		<ul>
-			<li><a href="register">고객등록</a></li>
-			<li><a href="custList">고객목록조회/수정</a></li>
-			<li><a href="rentList">고객대여리스트</a></li>
-			<li><a href="rentAmount">고객대여금액조회</a></li>
-			<li><a href="">홈으로</a></li>
+	<nav class="menu">
+		<ul class="nav nav-pills nav-fill">
+			<li class="nav-item"><a href="register">고객등록</a></li>
+			<li class="nav-item"><a href="custList">고객목록조회/수정</a></li>
+			<li class="nav-item"><a href="rentList">고객대여리스트</a></li>
+			<li class="nav-item"><a href="rentAmount">고객대여금액조회</a></li>
+			<li class="nav-item"><a href="">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>
-	<section align= "center">
-		<div>
+	<section>
+		<div align= "center">
 			도서 고객 및 대여관리 프로그램<br>
 			프로그램 작성순서<br>
 			1. 고객정보 테이블을 생성 한다.<br>
@@ -41,8 +40,11 @@
 			7. 고객별 대여금액을 조회하는 프로그램을 작성한다.<br>
 		</div>
 	</section>
-	<footer>
-		<div><h5 align="center">나도 할 수 있는 Java & Spring 웹 개발 종합반(정채원)</h5></div>
-	</footer> 
+	<hr>
+	<div class="container">
+		<footer>
+			<p class="text-center text-body-secondary">나도 할 수 있는 Java & Spring 웹개발 종합반(정채원)</p>
+		</footer>
+	</div>
 </body>
 </html>
