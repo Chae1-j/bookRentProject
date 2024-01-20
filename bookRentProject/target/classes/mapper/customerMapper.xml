@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.fastCampus.bookRentProject.dao.CustomerMapper">
+<mapper namespace="com.fastcampus.bookRentProject.dao.CustomerMapper">
 
 	<!-- 고객번호 부여 -->
 	<select id="selectNo" resultType="int">
 		SELECT MAX(cust_no)
-		FROM cust_tbl
+		FROM member_tbl
 	</select>
 	
 	<!-- 고객 등록 -->
-	<insert id="insert" parameterType="com.fastcampus.bookRentProject.domain.CustomerDto">		
-		INSERT INTO cust_tbl
+	<insert id="insert" parameterType="dto">		
+		INSERT INTO member_tbl
 			VALUES (
-				#{cust_no}+1
+				#{cust_no}
 				,#{cust_name}
 				,#{phone}
 				,now()
@@ -24,19 +24,19 @@
 	<!-- 전체 고객 목록 -->
 	<select id="selectAll" resultType="com.fastcampus.bookRentProject.domain.CustomerDto">
 		SELECT *
-			FROM cust_tbl
+			FROM member_tbl
 	</select>
 	
 	<!-- 개별 고객 -->
 	<select id="select" resultType="com.fastcampus.bookRentProject.domain.CustomerDto">
 		SELECT *
-		FROM cust_tbl
+		FROM member_tbl
 		WHERE CUST_NO=#{cust_no}
 	</select>
 	
 	<!-- 고객정보 수정-->
 	<update id="custUpdate">
-		UPDATE cust_tbl
+		UPDATE member_tbl
 			SET CUST_NAME = #{cust_name}
 				,PHONE = #{phone}
 				,CUST_EMAIL = #{cust_email}

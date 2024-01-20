@@ -38,17 +38,17 @@
 				<th>이메일</th>
 				<th>고객등급</th>
 			</tr>
-			<c:forEach var="cust" items="${custList }" >
-					<tr>
-						<td><a href="">${cust.cust_no }</a></td>
-					<td>${cust.cust_name }</td>
-					<td>${cust.phone }</td>
-					<td>${cust.phone }</td>
-					<td>${cust.cust_email }</td>
+			<c:forEach var="list" items="${list }" >
+				<tr align="center">
+					<td><a href="getCust?cust_no=${list.cust_no }">${list.cust_no }</a></td>
+					<td>${list.cust_name }</td>
+					<td>${list.phone }</td>
+					<td>${list.phone }</td>
+					<td>${list.cust_email }</td>
 					<td>
-						<c:if test="${cust.grade eq 'P' }">Platinum</c:if>
-						<c:if test="${cust.grade eq 'G' }">Gold</c:if>
-						<c:if test="${cust.grade eq 'S' }">Silver</c:if>
+						<c:if test="${list.grade eq 'P' }">Platinum</c:if>
+						<c:if test="${list.grade eq 'G' }">Gold</c:if>
+						<c:if test="${list.grade eq 'S' }">Silver</c:if>
 					</td>
 				</tr>
 			</c:forEach>

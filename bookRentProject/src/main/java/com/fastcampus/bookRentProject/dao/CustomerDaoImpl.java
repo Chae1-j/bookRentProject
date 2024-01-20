@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import com.fastcampus.bookRentProject.domain.CustomerDto;
 
@@ -23,7 +22,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	
 	@Override
 	public int insert(CustomerDto dto) throws Exception {
-		System.out.println("daoImpl " + dto);
+//		System.out.println("daoImpl " + dto);
 		return session.insert(namespace + "insert", dto);
 	}
 	
@@ -33,11 +32,11 @@ public class CustomerDaoImpl implements CustomerDao {
 	}
 	@Override
 	public CustomerDto select(Integer cust_no) throws Exception {
-		return session.selectOne(namespace+"selects");
+		return session.selectOne(namespace+"select",cust_no);
 	}
 	@Override
 	public int custUpdate(CustomerDto dto) throws Exception {
-		return session.update(namespace+"custUpdate");
+		return session.update(namespace+"custUpdate",dto);
 	}
 	
 }

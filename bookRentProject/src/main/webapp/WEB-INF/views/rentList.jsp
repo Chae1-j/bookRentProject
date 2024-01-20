@@ -37,7 +37,7 @@
 				<th>대여금액</th>
 				<th>대여일자</th>
 			</tr>
-			<c:forEach var="rent" items="${rentList }">
+			<c:forEach var="rent" items="${list }">
 				<tr>
 					<td>${rent.cust_no }</td>
 					<td>${rent.rent_no }</td>

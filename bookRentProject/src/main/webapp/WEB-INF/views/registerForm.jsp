@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <!-- 자바스크립트, jQuery, AJAX -->
+
 <!-- 연락처 숫자만 입력되는 유효성 검사 -->
 <script type="text/javascript">
 	function uncomma(str) {
@@ -71,7 +72,8 @@
 			<h5>고객등록</h5>
 			<div class="mb-3">
 				<label class="form-label">고객번호</label>
-				<input class="form-control" type="text" readonly value="${cust_no }+1">
+				<input class="form-control" type="text" readonly placeholder="${cust_no }">
+				<input type="hidden" name="cust_no" value="${cust_no }">
 			</div>
 			<div class="mb-3">
 				<label class="form-label">고객이름</label>

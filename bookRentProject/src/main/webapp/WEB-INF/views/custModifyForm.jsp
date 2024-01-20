@@ -55,41 +55,41 @@
 			<li class="nav-item"><a href="custList">고객목록조회/수정</a></li>
 			<li class="nav-item"><a href="rentList">고객대여리스트</a></li>
 			<li class="nav-item"><a href="rentAmount">고객대여금액조회</a></li>
-			<li class="nav-item"><a href="">홈으로</a></li>
+			<li class="nav-item"><a href="/">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>
-	<form action="" method="post" enctype="multipart/form-data">
-		<section align= "center">
-			<h3>고객등록</h3>
-			<div>
-				<label>고객번호</label>
-				<label>${cust_no }</label>
+	<form action="custModify" method="post" enctype="multipart/form-data">
+		<section>
+			<h5>고객정보수정</h5>
+			<div class="mb-3">
+				<label class="form-label">고객번호</label>
+				<input type="text" readonly class="form-control" placeholder="${cust.cust_no }">
 			</div>
-			<div>
-				<label>고객이름</label>
-				<input type="text" name="cust_name" value="${cust_name }">
+			<div class="mb-3">
+				<label class="form-label">고객이름</label>
+				<input class="form-control" type="text" name="cust_name" value="${cust.cust_name }">
 			</div>
-			<div>
-				<label>전화번호</label>
-				<input type="tel" name="phone" value="${phone }">
+			<div class="mb-3">
+				<label class="form-label">전화번호</label>
+				<input class="form-control" type="tel" name="phone" value="${cust.phone }">
 			</div>
-			<div>
-				<label>이메일</label>
-				<input type="email" value="${cust_email }">
+			<div class="mb-3">
+				<label class="form-label">이메일</label>
+				<input class="form-control" type="email" value="${cust.cust_email }">
 			</div>
-			<div>
-				<label>고객등급</label>
-				<select name="grade" required>
+			<div class="mb-3">
+				<label class="form-label">고객등급</label>
+				<select class="form-select" name="grade" required>
 					<option value="">고객등급을 선택해주세요</option>
 					<option <c:if test="${cust.grade eq 'P'}">selected</c:if> value="P">P</option>
 					<option <c:if test="${cust.grade eq 'G'}">selected</c:if> value="G">G</option>
 					<option <c:if test="${cust.grade eq 'S'}">selected</c:if> value="S">S</option>
 				</select>
 			</div>
-			<div>
-				<button type="submit">등록</button>
-				<button type="reset">취소</button>
+			<div class="mb-3" align="center">
+				<button class="btn btn-sm btn-outline-dark" type="submit" onclick="">수정</button>
+				<button class="btn btn-sm btn-outline-dark" onclick="location.href='???????????????'">조회</button> 
 			</div>
 		</section>
 	</form>

@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.fastCampus.bookRentProject.dao.RentMapper.">
+<mapper namespace="com.fastcampus.bookRentProject.dao.RentMapper">
 	
 	<!-- 고객대여리스트 -->
-	<select id="">
+	<select id="selectRentList" resultType="com.fastcampus.bookRentProject.domain.RentDto">
 		SELECT *
 			FROM rent_tbl
 	</select>
 	
-	<!-- 고객대여금액조회 
-	<select id="">
-		
-	</select>
+<!-- 	<resultMap id="RentResultMap" type="com.example.model.Rent">
+        <id property="rentNo" column="rent_no"/>
+        <result property="bookCode" column="book_code"/>
+        <result property="rentPrice" column="rent_price"/>
+        <result property="rentDate" column="rent_date"/>
+        Add other properties as needed
+        <association property="customer" resultMap="CustomerResultMap"/>
+    </resultMap>
+
+    <resultMap id="CustomerResultMap" type="com.example.model.Customer">
+        <id property="custNo" column="cust_no"/>
+        <result property="custName" column="cust_name"/>
+        <result property="grade" column="grade"/>
+        Add other properties as needed
+    </resultMap> -->
+    
+    <!-- <resultMap id="RentResultMap" type="com.fastcampus.dto.RentDto">
+	    <id property="cust_no" column="cust_no"/>
+	    <result property="cust_name" column="cust_name"/>
+	    <result property="grade" column="grade"/>
+	    <result property="rent_price" column="rent_price"/>
+	</resultMap>
+    
+	고객대여금액조회
+	<select id="selectJoinRent" resultMap="RentResultMap">
+		SELECT
+	        m.cust_no,
+	        m.cust_name,
+	        m.grade,
+	        SUM(r.rent_price)
+	    FROM
+	        rent_tbl r
+	    JOIN
+	        member_tbl m ON r.cust_no = m.cust_no
+	    GROUP BY m.cust_no
+	    ORDER BY r.rent_price DESC
+	</select> -->
 	
--->
 </mapper>
