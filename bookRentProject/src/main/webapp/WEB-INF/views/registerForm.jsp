@@ -71,7 +71,7 @@
 			<h5>고객등록</h5>
 			<div class="mb-3">
 				<label class="form-label">고객번호</label>
-				<input class="form-control" type="text" readonly value="${cust_no }">
+				<input class="form-control" type="text" readonly value="${cust_no }+1">
 			</div>
 			<div class="mb-3">
 				<label class="form-label">고객이름</label>

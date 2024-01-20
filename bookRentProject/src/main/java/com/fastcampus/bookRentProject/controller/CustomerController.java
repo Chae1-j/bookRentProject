@@ -1,10 +1,8 @@
 package com.fastcampus.bookRentProject.controller;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,11 +16,15 @@ import com.fastcampus.bookRentProject.service.CustomerService;
 @RequestMapping("/")
 public class CustomerController {
 	@Autowired(required=false)
-//	private CustomerDao dao;
+	private CustomerDao dao;
+	@Autowired
 	private CustomerService service;
 	
 	@GetMapping("register")
-	public String register() {
+	public String register(Model m) throws Exception {
+		int cust_no = service.getNo();
+		System.out.println("고객번호 : " + cust_no);
+		m.addAttribute("cust_no",cust_no);
 		return "registerForm";
 	}
 	
@@ -30,7 +32,9 @@ public class CustomerController {
 	public String registerPro(Model m,@ModelAttribute CustomerDto dto) {
 		System.out.println(dto);
 		try {
+			System.out.println(service.registerPro(dto));
 			int rowCnt = service.registerPro(dto);
+			System.out.println("rowCont" + rowCnt);
 			if(rowCnt != 1) {
 				m.addAttribute("msg","고객등록 실패");
 				return "redirect:/register";

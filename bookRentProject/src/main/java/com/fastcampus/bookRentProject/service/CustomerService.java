@@ -5,6 +5,7 @@ import java.util.List;
 import com.fastcampus.bookRentProject.domain.CustomerDto;
 
 public interface CustomerService { // mapper역할
+	int getNo() throws Exception;
 	int registerPro(CustomerDto dto) throws Exception;
 	List<CustomerDto> custList() throws Exception;
 	CustomerDto getCust(Integer cust_no) throws Exception;

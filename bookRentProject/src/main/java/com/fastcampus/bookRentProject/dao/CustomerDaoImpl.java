@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.fastcampus.bookRentProject.domain.CustomerDto;
 
@@ -12,13 +13,20 @@ import com.fastcampus.bookRentProject.domain.CustomerDto;
 public class CustomerDaoImpl implements CustomerDao {
 	@Autowired(required=false)
 	private SqlSession session;
-	private static String namespace="com.fastcampus.bookRentProject.dao.CustomerDaoImpl.";
+	@Autowired(required=false)
+	private String namespace="com.fastcampus.bookRentProject.dao.CustomerMapper.";
+	
+	@Override
+	public int selectNo() throws Exception {
+		return session.selectOne(namespace+"selectNo");
+	}
 	
 	@Override
 	public int insert(CustomerDto dto) throws Exception {
 		System.out.println("daoImpl " + dto);
-		return session.insert(namespace + "insert");
+		return session.insert(namespace + "insert", dto);
 	}
+	
 	@Override
 	public List<CustomerDto> selectAll() throws Exception {
 		return session.selectList(namespace+"selectAll");
@@ -31,6 +39,5 @@ public class CustomerDaoImpl implements CustomerDao {
 	public int custUpdate(CustomerDto dto) throws Exception {
 		return session.update(namespace+"custUpdate");
 	}
-	
 	
 }
