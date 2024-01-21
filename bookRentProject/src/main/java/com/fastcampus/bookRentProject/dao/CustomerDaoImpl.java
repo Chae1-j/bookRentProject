@@ -22,7 +22,6 @@ public class CustomerDaoImpl implements CustomerDao {
 	
 	@Override
 	public int insert(CustomerDto dto) throws Exception {
-//		System.out.println("daoImpl " + dto);
 		return session.insert(namespace + "insert", dto);
 	}
 	

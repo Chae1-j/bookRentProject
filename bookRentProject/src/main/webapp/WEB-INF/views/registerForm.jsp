@@ -14,44 +14,11 @@
 <title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
 <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
-<!-- 자바스크립트, jQuery, AJAX -->
-
-<!-- 연락처 숫자만 입력되는 유효성 검사 -->
+<!-- 핸드폰번호 유효성 검사 -->
 <script type="text/javascript">
-	function uncomma(str) {
-	    str = String(str);
-	    return str.replace(/[^\d]+/g, '');
-	} 
-	 
-	function inputOnlyNumberFormat(obj) {
-	    obj.value = onlynumber(uncomma(obj.value));
-	}
-	 
-	function onlynumber(str) {
-	    str = String(str);
-	    //alert("숫자만 입력가능합니다.")
-	    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1');
-	}
-</script>
-
-<script type="text/javascript">
-	var emailStatus =false; 
-	
-	//===========이메일 입력 시 영어, 숫자만 입력 가능===============
-	function onlyEngNum(str) {
-		//var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-		var regType1 = /^[A-Za-z0-9+.\@]*$/; // regex : 영어, 숫자만 입력
-		if (regExp.test(str.value)) { //영어, 숫자만 입력했을 때
-		}else{//영어, 숫자를 제외한 값 입력 시
-			str.value = ""; // ""으로 초기화
-			alert("이메일 형식에 맞게 입력해주세요")
-		}
-	}
-</script>
-<script>
-	var msg = document.getElementByName("cust_name");
-	function chk() {
-		alert(msg);
+	function phChk(obj) {
+		var phoneRule = /^(01[016789]{1})*-[0-9]{3,4}*-[0-9]{4}$/;
+		if(phoneRule )
 	}
 </script>
 <body>
@@ -63,7 +30,7 @@
 			<li class="nav-item"><a href="custList">고객목록조회/수정</a></li>
 			<li class="nav-item"><a href="rentList">고객대여리스트</a></li>
 			<li class="nav-item"><a href="rentAmount">고객대여금액조회</a></li>
-			<li class="nav-item"><a href="">홈으로</a></li>
+			<li class="nav-item"><a href="/bookRentProject/">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>
@@ -73,7 +40,6 @@
 			<div class="mb-3">
 				<label class="form-label">고객번호</label>
 				<input class="form-control" type="text" readonly placeholder="${cust_no }">
-				<input type="hidden" name="cust_no" value="${cust_no }">
 			</div>
 			<div class="mb-3">
 				<label class="form-label">고객이름</label>
@@ -81,7 +47,7 @@
 			</div>
 			<div class="mb-3">
 				<label class="form-label">전화번호</label>
-				<input class="form-control" type="tel" name="phone" placeholder="숫자만 입력해주세요" onkeyup="inputOnlyNumberFormat(this)">
+				<input class="form-control" type="tel" name="phone" placeholder="010-0000-0000형식으로 입력하세요" onkeyup="phChk(this)">
 			</div>
 			<div class="mb-3">
 				<label class="form-label">이메일</label>

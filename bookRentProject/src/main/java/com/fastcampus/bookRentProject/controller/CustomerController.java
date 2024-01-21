@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fastcampus.bookRentProject.dao.CustomerDao;
 import com.fastcampus.bookRentProject.domain.CustomerDto;
@@ -26,8 +29,8 @@ public class CustomerController {
 	
 	@GetMapping("register")
 	public String register(Model m) throws Exception {
-		int cust_no = service.getNo();
-		m.addAttribute("cust_no",cust_no+1);
+		Integer cust_no = service.getNo();
+		m.addAttribute("cust_no",cust_no);
 		return "registerForm";
 	}
 	
@@ -35,13 +38,12 @@ public class CustomerController {
 	public String registerPro(Model m,@ModelAttribute CustomerDto dto) {
 		System.out.println(dto);
 		try {
-			System.out.println(service.registerPro(dto));
 			int rowCnt = service.registerPro(dto);
 			if(rowCnt != 1) {
 				m.addAttribute("msg","고객등록 실패");
 				return "redirect:/register";
 			} else {
-				return "cust_list";
+				return "redirect:/custList";
 			}
 		} catch (Exception e) {
 			//m.addAttribute("msg", "try-catch문 오류");
@@ -65,7 +67,6 @@ public class CustomerController {
 	@GetMapping("getCust")
 	public String getCust(Model m, Integer cust_no) {
 		try {
-			System.out.println("click 고객번호 : " + cust_no);
 			CustomerDto cust = service.getCust(cust_no);
 			m.addAttribute("cust",cust);
 		} catch (Exception e) {
@@ -75,21 +76,22 @@ public class CustomerController {
 	}
 	
 	@PostMapping("custModify")
-	public String custModify(Model m,@ModelAttribute CustomerDto dto) {
+	public String custModify(Model m,@ModelAttribute CustomerDto dto, RedirectAttributes ratr) {
+		System.out.println("modify dto = " + dto);
+		System.out.println(dto.getCust_no());
 		try {
 			int rowCnt = service.custModify(dto);
-			System.out.println("modify dto = " + dto);
 			if(rowCnt != 1) {
-				m.addAttribute("msg","고객등록 실패");
-				return "redirect:/register";
+				ratr.addFlashAttribute("msg","failed");
+				return "redirect:/getCust?cust_no=" + dto.getCust_no() ;
 			} else {
-				return "cust_list";
+				return "redirect:/custList";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return "cust_list";
+		return "redirect:/cusList";
 	}
 	
 	

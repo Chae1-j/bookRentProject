@@ -23,32 +23,30 @@
 			<li class="nav-item"><a href="custList">고객목록조회/수정</a></li>
 			<li class="nav-item"><a href="rentList">고객대여리스트</a></li>
 			<li class="nav-item"><a href="rentAmount">고객대여금액조회</a></li>
-			<li class="nav-item"><a href="">홈으로</a></li>
+			<li class="nav-item"><a href="/bookRentProject/">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>
-	<form action="" method="post" enctype="multipart/form-data">
-		<section>
-		<h5>고객목록 조회/수정</h5>
-			<table class="table table-sm">
-				<tr>
-					<th>고객번호</th>
-					<th>고객이름</th>
-					<th>고객등급</th>
-					<th>총대여금액</th>
-				</tr>
-				<c:forEach var="cust" items="${custList }" varStatus="status">
-				<!-- status 사용안할 수도 있음. mapper에서 테이블 조인함 -->
+	<section>
+	<h5>고객대여금액조회</h5>
+		<table class="table table-sm">
+			<tr>
+				<th>고객번호</th>
+				<th>고객이름</th>
+				<th>고객등급</th>
+				<th>총대여금액</th>
+			</tr>
+			<c:forEach var="cust" items="${custList }" varStatus="status">
+			<!-- status 사용안할 수도 있음. mapper에서 테이블 조인함 -->
 s					<tr>
 						<td>${cust.cust_no }</td>
-						<td>${cust.cust_name }</td>
-						<td>${cust.grade }</td>
-						<td>${rent[status.index].rent_price }</td>
-					</tr>
-				</c:forEach>
-			</table>
-		</section>
-	</form>
+					<td>${cust.cust_name }</td>
+					<td>${cust.grade }</td>
+					<td>${rent[status.index].rent_price }</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</section>
 	<div class="container">
 		<footer>
 			<p class="text-center text-body-secondary">나도 할 수 있는 Java & Spring 웹개발 종합반(정채원)</p>

@@ -14,37 +14,9 @@
 <title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
 <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
-<!-- 자바스크립트, jQuery, AJAX -->
-<!-- 연락처 숫자만 입력되는 유효성 검사 -->
-<script type="text/javascript">
-	function uncomma(str) {
-	    str = String(str);
-	    return str.replace(/[^\d]+/g, '');
-	} 
-	 
-	function inputOnlyNumberFormat(obj) {
-	    obj.value = onlynumber(uncomma(obj.value));
-	}
-	 
-	function onlynumber(str) {
-	    str = String(str);
-	    //alert("숫자만 입력가능합니다.")
-	    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1') + alert;
-	}
-</script>
-
-<script type="text/javascript">
-	var emailStatus =false; 
-	
-	//===========이메일 입력 시 영어, 숫자만 입력 가능===============
-	function onlyEngNum(str) {
-		var regType1 = /^[A-Za-z0-9+]*$/; // regex : 영어, 숫자만 입력
-		if (regType1.test(str.value)) { //영어, 숫자만 입력했을 때
-		}else{//영어, 숫자를 제외한 값 입력 시
-			str.value = ""; // ""으로 초기화
-			alert("영어와 숫자만 입력가능합니다.")
-		}
-	}
+<script>
+  let msg = "${msg}";
+  if(msg=="failed") alert("고객 정보 수정에 실패하였습니다. 다시 시도해주세요.");
 </script>
 <body>
 	<header><h2>도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
@@ -55,16 +27,17 @@
 			<li class="nav-item"><a href="custList">고객목록조회/수정</a></li>
 			<li class="nav-item"><a href="rentList">고객대여리스트</a></li>
 			<li class="nav-item"><a href="rentAmount">고객대여금액조회</a></li>
-			<li class="nav-item"><a href="/">홈으로</a></li>
+			<li class="nav-item"><a href="/bookRentProject/">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>
-	<form action="custModify" method="post" enctype="multipart/form-data">
+	<form action="custModify" method="post">
 		<section>
 			<h5>고객정보수정</h5>
 			<div class="mb-3">
 				<label class="form-label">고객번호</label>
 				<input type="text" readonly class="form-control" placeholder="${cust.cust_no }">
+				<input type="hidden" name="cust_no" value="${cust.cust_no }">
 			</div>
 			<div class="mb-3">
 				<label class="form-label">고객이름</label>
@@ -76,7 +49,7 @@
 			</div>
 			<div class="mb-3">
 				<label class="form-label">이메일</label>
-				<input class="form-control" type="email" value="${cust.cust_email }">
+				<input class="form-control" type="email" name="cust_email" value="${cust.cust_email }">
 			</div>
 			<div class="mb-3">
 				<label class="form-label">고객등급</label>
@@ -88,14 +61,14 @@
 				</select>
 			</div>
 			<div class="mb-3" align="center">
-				<button class="btn btn-sm btn-outline-dark" type="submit" onclick="">수정</button>
-				<button class="btn btn-sm btn-outline-dark" onclick="location.href='???????????????'">조회</button> 
+				<button class="btn btn-sm btn-outline-dark" type="submit">수정</button>
+				<button class="btn btn-sm btn-outline-dark" type="button" onclick="location.href='custList'">조회</button> 
 			</div>
 		</section>
 	</form>
 	<div class="container">
-		<footer>
-			<p class="text-center text-body-secondary">나도 할 수 있는 Java & Spring 웹개발 종합반(정채원)</p>
+		<footer class="card-footer text-body-secondary">	
+			<p class="text-center">나도 할 수 있는 Java & Spring 웹개발 종합반(정채원)</p>
 		</footer>
 	</div>
 </body>

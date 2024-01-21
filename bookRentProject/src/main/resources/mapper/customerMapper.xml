@@ -4,16 +4,15 @@
 
 	<!-- 고객번호 부여 -->
 	<select id="selectNo" resultType="int">
-		SELECT MAX(cust_no)
+		SELECT COALESCE(MAX(cust_no), 100000)+1
 		FROM member_tbl
 	</select>
 	
 	<!-- 고객 등록 -->
-	<insert id="insert" parameterType="dto">		
-		INSERT INTO member_tbl
+	<insert id="insert" parameterType="dto">	
+		INSERT INTO member_tbl (cust_name, phone, join_date, cust_email, grade)
 			VALUES (
-				#{cust_no}
-				,#{cust_name}
+				#{cust_name}
 				,#{phone}
 				,now()
 				,#{cust_email}

@@ -6,7 +6,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fastcampus.bookRentProject.dao.CustomerDao;
 import com.fastcampus.bookRentProject.dao.RentDao;
+import com.fastcampus.bookRentProject.domain.CustomerDto;
 import com.fastcampus.bookRentProject.domain.RentDto;
 
 @Service
@@ -23,6 +25,6 @@ public class RentServiceImpl implements RentService {
 //	public List<RentDto> rentSum() throws Exception {
 //		return dao.selectJoinRent();
 //	}
-
+	
 	
 }

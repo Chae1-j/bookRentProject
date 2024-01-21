@@ -30,16 +30,10 @@ public class RentController {
 		return "rentList";
 	}
 	
-//	@GetMapping("rentAmount")
-//	public String rentSum(Model m) {
-//		try {
-//			List<RentDto> list = service.rentSum();
-//			m.addAttribute("list",list);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		
-//		return "rentAmount";
-//	}
+	@GetMapping("rentAmount")
+	public String rentSum(Model m) {
+		
+		return "rentAmount";
+	}
 
 }

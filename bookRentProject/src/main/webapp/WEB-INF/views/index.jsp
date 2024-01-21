@@ -23,7 +23,7 @@
 			<li class="nav-item"><a href="custList">고객목록조회/수정</a></li>
 			<li class="nav-item"><a href="rentList">고객대여리스트</a></li>
 			<li class="nav-item"><a href="rentAmount">고객대여금액조회</a></li>
-			<li class="nav-item"><a href="">홈으로</a></li>
+			<li class="nav-item"><a href="/bookRentProject/">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>

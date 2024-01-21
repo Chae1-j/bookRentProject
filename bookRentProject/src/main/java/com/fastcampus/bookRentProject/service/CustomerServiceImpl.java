@@ -20,7 +20,6 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	public int registerPro(CustomerDto dto) throws Exception {
-		System.out.println("serviceImpl DTO " + dto);
 		return dao.insert(dto);
 	}
 

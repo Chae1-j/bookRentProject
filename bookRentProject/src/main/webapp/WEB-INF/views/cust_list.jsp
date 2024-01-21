@@ -23,7 +23,7 @@
 			<li class="nav-item"><a href="custList">고객목록조회/수정</a></li>
 			<li class="nav-item"><a href="rentList">고객대여리스트</a></li>
 			<li class="nav-item"><a href="rentAmount">고객대여금액조회</a></li>
-			<li class="nav-item"><a href="">홈으로</a></li>
+			<li class="nav-item"><a href="/bookRentProject/">홈으로</a></li>
 		</ul>
 	</nav>
 	<hr>
@@ -43,7 +43,7 @@
 					<td><a href="getCust?cust_no=${list.cust_no }">${list.cust_no }</a></td>
 					<td>${list.cust_name }</td>
 					<td>${list.phone }</td>
-					<td>${list.phone }</td>
+					<td><fmt:formatDate value="${list.join_date }" pattern="yyyy-MM-dd"/></td>
 					<td>${list.cust_email }</td>
 					<td>
 						<c:if test="${list.grade eq 'P' }">Platinum</c:if>
