@@ -8,19 +8,27 @@
 			FROM rent_tbl
 	</select>
 
-	 <!-- 고객대여금액조회 -->
-	<!--<select id="selectJoinRent" resultMap="RentResultMap">
+	 <!-- 고객대여금액조회 -->	
+	 <resultMap id="RentJoinMemberResultMap" type="com.fastcampus.bookRentProject.domain.CustomerRentDto">
+        <result property="cust_no" column="cust_no"/>
+        <result property="cust_name" column="cust_name"/>
+        <result property="grade" column="grade"/>
+        <result property="rent_price" column="rent_price"/>
+        <result property="total_amount" column="total_amount"/>
+    </resultMap>
+	  
+	<select id="selectJoinRent" resultMap="RentJoinMemberResultMap">
 		SELECT
 	        m.cust_no,
 	        m.cust_name,
 	        m.grade,
-	        SUM(r.rent_price)
+	        SUM(r.rent_price) as total_amount
 	    FROM
 	        rent_tbl r
 	    JOIN
 	        member_tbl m ON r.cust_no = m.cust_no
 	    GROUP BY m.cust_no
-	    ORDER BY r.rent_price DESC
-	</select>  -->
+	    ORDER BY total_amount DESC
+	</select>
 	
 </mapper>

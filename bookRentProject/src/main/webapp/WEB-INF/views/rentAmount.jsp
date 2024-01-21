@@ -36,13 +36,16 @@
 				<th>고객등급</th>
 				<th>총대여금액</th>
 			</tr>
-			<c:forEach var="cust" items="${custList }" varStatus="status">
-			<!-- status 사용안할 수도 있음. mapper에서 테이블 조인함 -->
-s					<tr>
-						<td>${cust.cust_no }</td>
-					<td>${cust.cust_name }</td>
-					<td>${cust.grade }</td>
-					<td>${rent[status.index].rent_price }</td>
+			<c:forEach var="rent" items="${list }">
+s				<tr>
+					<td>${rent.cust_no }</td>
+					<td>${rent.cust_name }</td>
+					<td>
+						<c:if test="${rent.grade eq 'P' }">Platinum</c:if>
+						<c:if test="${rent.grade eq 'G' }">Gold</c:if>
+						<c:if test="${rent.grade eq 'S' }">Silver</c:if>
+					</td>
+					<td>${rent.total_amount }</td>
 				</tr>
 			</c:forEach>
 		</table>
