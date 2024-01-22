@@ -11,12 +11,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css" type="text/css">
+<title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
 </head>
 <body>
-	<header><h2>도서 고객 및 대여관리 프로그램 ver 1.0 </h2></header>
-	<hr>
+	<header><h3>도서 고객 및 대여관리 프로그램 ver 1.0 </h3></header>
 	<nav class="menu">
 		<ul class="nav nav-pills nav-fill">
 			<li class="nav-item"><a href="register">고객등록</a></li>
@@ -26,10 +28,9 @@
 			<li class="nav-item"><a href="/bookRentProject/">홈으로</a></li>
 		</ul>
 	</nav>
-	<hr>
 	<section>
-		<div align= "center">
-			도서 고객 및 대여관리 프로그램<br>
+		<div class="contents" id="index">
+			<h6 align="center">도서 고객 및 대여관리 프로그램</h6><br>
 			프로그램 작성순서<br>
 			1. 고객정보 테이블을 생성 한다.<br>
 			2. 대여정보 테이블을 생성 한다.<br>
@@ -40,7 +41,6 @@
 			7. 고객별 대여금액을 조회하는 프로그램을 작성한다.<br>
 		</div>
 	</section>
-	<hr>
 	<div class="container">
 		<footer>
 			<p class="text-center text-body-secondary">나도 할 수 있는 Java & Spring 웹개발 종합반(정채원)</p>

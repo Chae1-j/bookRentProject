@@ -13,6 +13,9 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link rel="stylesheet" href="css/main.css" type="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet&display=swap" rel="stylesheet">
 <title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
 <script type="text/javascript">
 	function nameChk(obj) {
@@ -82,8 +85,7 @@
 </script>
 </head>
 <body>
-	<header><h2>도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
-	<hr>
+	<header><h3>도서 고객 및 대여관리 프로그램 ver 1.0</h3></header>
 	<nav class="menu">
 		<ul class="nav nav-pills nav-fill">
 			<li class="nav-item"><a href="register">고객등록</a></li>
@@ -93,42 +95,42 @@
 			<li class="nav-item"><a href="/bookRentProject/">홈으로</a></li>
 		</ul>
 	</nav>
-	<hr>
 	<form action="registerPro" method="post" onsubmit="return validName()">
 		<section>
 			<h5>고객등록</h5>
-			<div class="mb-3">
-				<label class="form-label">고객번호</label>
-				<input class="form-control" type="text" readonly placeholder="${cust_no }">
-			</div>
-			<div class="mb-3">
-				<label class="form-label">고객이름</label>
-				<input class="form-control" type="text" name="cust_name" placeholder="한글 2~8자만 입력가능합니다" onchange="nameChk(this)">
-			</div>
-			<div class="mb-3">
-				<label class="form-label">전화번호</label>
-				<input class="form-control" type="tel" name="phone" placeholder="xxx-xxxx-xxxx 형식으로 입력하세요" onchange="phChk(this)">
-			</div>
-			<div class="mb-3">
-				<label class="form-label">이메일</label>
-				<input class="form-control" type="email" name="cust_email" onchange="emailChk(this)">
-			</div>
-			<div class="mb-3">
-				<label class="form-label">고객등급</label>
-				<select class="form-select" name="grade" required>
-					<option value="">고객등급을 선택해주세요</option>
-					<option value="P">P</option>
-					<option value="G">G</option>
-					<option value="S">S</option>
-				</select>
-			</div>
-			<div class="mb-3" align="center">
-				<button class="btn btn-sm btn-outline-dark" type="submit" onclick="validName">등록</button>
-				<button class="btn btn-sm btn-outline-dark" type="reset">취소</button>
+			<div class="content">
+				<div class="mb-3">
+					<label class="form-label">고객번호</label>
+					<input class="form-control" type="text" readonly placeholder="${cust_no }">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">고객이름</label>
+					<input class="form-control" type="text" name="cust_name" placeholder="한글 2~8자만 입력가능합니다" onchange="nameChk(this)">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">전화번호</label>
+					<input class="form-control" type="tel" name="phone" placeholder="xxx-xxxx-xxxx 형식으로 입력하세요" onchange="phChk(this)">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">이메일</label>
+					<input class="form-control" type="email" name="cust_email" onchange="emailChk(this)">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">고객등급</label>
+					<select class="form-select" name="grade" required>
+						<option value="">고객등급을 선택해주세요</option>
+						<option value="P">P</option>
+						<option value="G">G</option>
+						<option value="S">S</option>
+					</select>
+				</div>
+				<div class="mb-3" align="center">
+					<button class="btn btn-sm btn-outline-dark" type="submit" onclick="validName">등록</button>
+					<button class="btn btn-sm btn-outline-dark" type="reset">취소</button>
+				</div>
 			</div>
 		</section>
 	</form>
-	<br>
 	<div class="container">
 		<footer>
 			<p class="text-center text-body-secondary">나도 할 수 있는 Java & Spring 웹개발 종합반(정채원)</p>

@@ -11,12 +11,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css" type="text/css">
+<title>도서 고객 및 대여관리 프로그램 ver 1.0</title>
 </head>
 <body>
-	<header><h2>도서 고객 및 대여관리 프로그램 ver 1.0</h2></header>
-	<hr>
+	<header><h3>도서 고객 및 대여관리 프로그램 ver 1.0</h3></header>
 	<nav class="menu">
 		<ul class="nav nav-pills nav-fill">
 			<li class="nav-item"><a href="register">고객등록</a></li>
@@ -26,10 +28,10 @@
 			<li class="nav-item"><a href="/bookRentProject/">홈으로</a></li>
 		</ul>
 	</nav>
-	<hr>
 	<section>
 	<h5>고객목록 조회/수정</h5>
-		<table class="table table-sm">
+		<div class="contents">
+		<table class="table table-sm table-bordered">
 			<tr>
 				<th>고객번호</th>
 				<th>고객이름</th>
@@ -53,6 +55,7 @@
 				</tr>
 			</c:forEach>
 		</table>
+		</div>
 	</section>
 	<div class="container">
 		<footer>
